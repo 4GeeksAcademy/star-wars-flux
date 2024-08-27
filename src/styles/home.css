@@ -1,0 +1,57 @@
+body {
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/image10/The-Millennium-Falcon-flying-through-an-asteroid-field-dodging-large-rocks-with-stars-and-distant-planets-in-the-background-1.jpg');
+    background-size:cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+/* .carrusel-container{
+    width: 50%;   
+    height: 100px; 
+    object-fit: cover;
+} */
+
+.carrusel {
+    display: flex;
+    overflow-x: auto; /* desplazamiento horizontal */
+    scroll-behavior: smooth; /* Desplazamiento suave */
+    gap: 1rem; /* Espacio entre los elementos */
+}
+
+.carrusel::-webkit-scrollbar {
+    display: none; /* Ocultar scrollbar en navegadores */
+}
+
+.item {
+    min-width: 10px; /* Anchura mínima de cada tarjeta */
+    flex-shrink: 0; /* Evita que los elementos se reduzcan */
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.buttons img {
+    width: 20px; /* Tamaño más pequeño */
+    height: 20px; /* Tamaño más pequeño */
+    cursor: pointer;
+    opacity: 0.8; /* Opacidad para hacerlas menos llamativas */
+    transition: opacity 0.3s; /* Transición suave cuando cambie la opacidad */
+}
+
+.buttons img:hover {
+    opacity: 1; /* Restablecer opacidad al pasar el cursor */
+}
+
+/* color boton ver mas */
+.btn-brown-yellow {
+    background-color: brown;
+    color: yellow;
+    border: none;
+}
+
+.btn-brown-yellow:hover {
+    background-color: #eac42b; /* Un marrón más oscuro al pasar el mouse */
+}
