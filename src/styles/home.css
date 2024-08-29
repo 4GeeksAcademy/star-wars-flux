@@ -1,15 +1,9 @@
 body {
-    background-image: url('https://www.pixelstalk.net/wp-content/uploads/image10/The-Millennium-Falcon-flying-through-an-asteroid-field-dodging-large-rocks-with-stars-and-distant-planets-in-the-background-1.jpg');
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/image10/Star-Wars-Space-PC-wallpaper-with-a-stunning-space-scene-featuring-a-fleet-of-Mon-Calamari-cruisers-and-Nebulon-B-frigates-in-formation-ready-for-battle-against-the-Empire.jpg');
     background-size:cover; 
     background-repeat: no-repeat; 
     background-position: center; 
 }
-
-/* .carrusel-container{
-    width: 50%;   
-    height: 100px; 
-    object-fit: cover;
-} */
 
 .carrusel {
     display: flex;
@@ -22,8 +16,20 @@ body {
     display: none; /* Ocultar scrollbar en navegadores */
 }
 
+h2 {
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    color: #1d1916; 
+    text-shadow: 
+        -1px -1px 0 rgb(237, 237, 114),  
+         1px -1px 0 rgb(237, 237, 114),  
+        -1px  1px 0 rgb(237, 237, 114),  
+         1px  1px 0 rgb(237, 237, 114);  
+    font-weight: bold; 
+}
+
+
 .item {
-    min-width: 10px; /* Anchura mínima de cada tarjeta */
+    min-width: 10px; 
     flex-shrink: 0; /* Evita que los elementos se reduzcan */
 }
 
@@ -34,8 +40,8 @@ body {
 }
 
 .buttons img {
-    width: 20px; /* Tamaño más pequeño */
-    height: 20px; /* Tamaño más pequeño */
+    width: 20px; 
+    height: 20px; 
     cursor: pointer;
     opacity: 0.8; /* Opacidad para hacerlas menos llamativas */
     transition: opacity 0.3s; /* Transición suave cuando cambie la opacidad */
@@ -54,4 +60,59 @@ body {
 
 .btn-brown-yellow:hover {
     background-color: #eac42b; /* Un marrón más oscuro al pasar el mouse */
+}
+
+.detalle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.detalle-imagen img {
+    max-width: 300px; 
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.detalle-info {
+    text-align: center;
+    max-width: 500px;
+}
+
+.bg-marron {
+    background-color: #1d1916; 
+}
+
+.btn-icon {
+    border: none;
+    background-color: yellow;
+    padding: 0;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+.btn-no-favorito i {
+    color: black; /* Color cuando no es favorito */
+  }
+
+  .btn-favorito i {
+    color: brown; /* Color rojo cuando es favorito */
+  }
+  
+  .btn-icon {
+    font-size: 1.5rem; /* Tamaño del texto e ícono dentro del botón */
+    padding: 10px; /* Espaciado interno del botón */
+  }
+  
+  .btn-icon i {
+    font-size: 1.0rem; /* Tamaño del ícono */
+  }
+
+.footer {
+    background-color: #1d1916; 
+    color: #FFD700; 
+    border-top: 2px solid #FFD700; 
+   margin-top: 40px;
 }

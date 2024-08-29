@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Navbar = () => {
-  const { store } = useContext(Context);
+  const { store, actions } = useContext(Context);
 
   const navbarStyle = {
     paddingTop: '0',
@@ -17,7 +17,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-light bg-brown" style={navbarStyle}>
+    <nav className="navbar navbar-light bg-marron" style={navbarStyle}>
       <Link to="/">
         <img
           src="https://i.pinimg.com/564x/1b/b5/da/1bb5dab5e6ddd60f391f37be838117ba.jpg"
@@ -38,27 +38,30 @@ export const Navbar = () => {
           Favoritos <span className="badge badge-light">{store.favoritos.length}</span>
         </button>
 
-        <div className="dropdown me-5
-          dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+        <div className="dropdown me-5 dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
           {store.favoritos.length > 0 ? (
-  store.favoritos.map((favoritos, index) => (
-    <div
-      key={index}
-      className="dropdown-item d-flex justify-content-between align-items-center">
-      <Link
-        to={`/details/${favoritos.tipo}/${favoritos.uid}`}
-        className="dropdown-item">
-        {favoritos.name}
-      </Link>
-      <button> <i className="fas fa-trash-alt"></i> </button>
-    </div>
-  ))
-) : (
-  <p>No hay nada agregado</p>
-)}
-
+            store.favoritos.map((favorito, index) => (
+              <div
+                key={index}
+                className="dropdown-item d-flex justify-content-between align-items-center">
+                <Link
+                  to={`/details/${favorito.tipo}/${favorito.uid}`}
+                  className="dropdown-item">
+                  {favorito.name}
+                </Link>
+                <button 
+                  onClick={() => actions.quitarFavorito(favorito, favorito.tipo)} 
+                  className="btn btn-sm btn-danger ms-2"
+                >
+                  <i className="fas fa-trash-alt"></i>
+                </button>
+              </div>
+            ))
+          ) : (
+            <p className="dropdown-item">No hay nada agregado</p>
+          )}
         </div>
       </div>
-    </nav >
+    </nav>
   );
 };
